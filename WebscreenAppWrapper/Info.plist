@@ -37,7 +37,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>WSURL</key>
-	<string>https://paulsnar.lv/experiments/slide/</string>
 </dict>
 </plist>

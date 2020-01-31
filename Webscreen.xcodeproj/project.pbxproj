@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43CB103623E40B5200E0B199 /* screensaver.html in Resources */ = {isa = PBXBuildFile; fileRef = 43CB103523E40B5200E0B199 /* screensaver.html */; };
+		43CB103723E40B5200E0B199 /* screensaver.html in Resources */ = {isa = PBXBuildFile; fileRef = 43CB103523E40B5200E0B199 /* screensaver.html */; };
 		69837DFE21D23ECB004A37B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837DFD21D23ECB004A37B4 /* AppDelegate.m */; };
 		69837E0021D23ECB004A37B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69837DFF21D23ECB004A37B4 /* Assets.xcassets */; };
 		69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E0121D23ECB004A37B4 /* MainMenu.xib */; };
@@ -22,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43CB103523E40B5200E0B199 /* screensaver.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = screensaver.html; path = Webscreen/screensaver.html; sourceTree = "<group>"; };
 		69837DFA21D23ECB004A37B4 /* WebscreenAppWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebscreenAppWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69837DFC21D23ECB004A37B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69837DFD21D23ECB004A37B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				69B0E70921DF6702001D1D0F /* webscreen.js */,
+				43CB103523E40B5200E0B199 /* screensaver.html */,
 				699E908F21D2354000693908 /* Webscreen */,
 				69837DFB21D23ECB004A37B4 /* WebscreenAppWrapper */,
 				699E908E21D2354000693908 /* Products */,
@@ -219,6 +223,7 @@
 				69837E0021D23ECB004A37B4 /* Assets.xcassets in Resources */,
 				69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */,
 				69837E2521D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */,
+				43CB103723E40B5200E0B199 /* screensaver.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69B0E70A21DF6702001D1D0F /* webscreen.js in Resources */,
+				43CB103623E40B5200E0B199 /* screensaver.html in Resources */,
 				69837E2421D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

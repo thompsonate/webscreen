@@ -22,7 +22,5 @@
 	<string>Copyright © 2018 paulsnar. All rights reserved. Further license information available at https://github.com/paulsnar/webscreen/blob/master/LICENSE.txt</string>
 	<key>NSPrincipalClass</key>
 	<string>WebscreenView</string>
-	<key>WSURL</key>
-	<string>https://paulsnar.lv/experiments/slide/</string>
 </dict>
 </plist>

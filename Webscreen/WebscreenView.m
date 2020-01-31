@@ -1,7 +1,6 @@
 #import "WebscreenView.h"
 
 static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
-static NSString* const kPlistUrlKey = @"WSURL";
 
 @interface WebscreenView () <
   WKNavigationDelegate,
@@ -15,7 +14,6 @@ static NSString* const kPlistUrlKey = @"WSURL";
 @implementation WebscreenView
 {
   NSUserDefaults* _defaults;
-  NSString* _url;
   NSView* _intermediateView;
   WKWebView* _webView;
   BOOL _animationStarted;
@@ -44,8 +42,6 @@ static NSString* const kPlistUrlKey = @"WSURL";
   if ( ! self) {
     return self;
   }
-
-  _url = [plist valueForKey:kPlistUrlKey];
   
   _defaults = defaults;
 
@@ -96,10 +92,13 @@ static NSString* const kPlistUrlKey = @"WSURL";
 
   self.layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
   _webView.alphaValue = 0.0;
-
-  NSURL *url = [NSURL URLWithString:_url];
-  NSURLRequest *rq = [NSURLRequest requestWithURL:url];
-  [_webView loadRequest:rq];
+  
+  NSBundle* bundle = [NSBundle bundleForClass:[WebscreenView class]];
+  NSString* htmlPath = [bundle pathForResource:@"screensaver" ofType:@"html"];
+  NSURL* fileURL = [NSURL fileURLWithPath:htmlPath];
+  NSString* htmlString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:nil];
+  
+  [_webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://screensaver.webcontent"]];
 }
 
 - (void)stopAnimation
