@@ -1,14 +1,11 @@
 #import "WebscreenView.h"
-#import "WSConfigurationPanel.h"
 
 static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
-static NSString* const kDefaultsKeyUrl = @"url";
-static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
+static NSString* const kPlistUrlKey = @"WSURL";
 
 @interface WebscreenView () <
   WKNavigationDelegate,
-  WKScriptMessageHandler,
-  WSConfigurationPanelDelegate>
+  WKScriptMessageHandler>
 
 - (void)injectWSKitScriptInUserContentController:
     (WKUserContentController*)userContentController;
@@ -22,7 +19,6 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
   NSView* _intermediateView;
   WKWebView* _webView;
   BOOL _animationStarted;
-  WSConfigurationPanel* _confPanel;
 }
 
 + (BOOL)performGammaFade
@@ -49,11 +45,8 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
     return self;
   }
 
-  _url = [defaults stringForKey:kDefaultsKeyUrl];
-  if (_url == nil) {
-    _url = [plist valueForKey:kPlistDefaultUrlKey];
-    [defaults setObject:_url forKey:kDefaultsKeyUrl];
-  }
+  _url = [plist valueForKey:kPlistUrlKey];
+  
   _defaults = defaults;
 
   self.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
@@ -118,16 +111,7 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 
 - (BOOL)hasConfigureSheet
 {
-  return YES;
-}
-
-- (NSWindow*)configureSheet
-{
-  if (_confPanel == nil) {
-    _confPanel = [[WSConfigurationPanel alloc] initWithInitialURL:_url];
-    _confPanel.delegate = self;
-  }
-  return _confPanel.window;
+  return NO;
 }
 
 - (void)resizeSubviewsWithOldSize:(NSSize)oldSize
@@ -214,29 +198,6 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
     WKWebView* animator = [_webView animator];
     animator.alphaValue = 1.0;
   }
-}
-
-#pragma mark - configuration panel delegate
-
-- (void)configurationPanel:(WSConfigurationPanel*)panel urlFieldChangedFrom:(NSString*)old to:(NSString*)current
-{
-  _url = current;
-  [self stopAnimation];
-  [self startAnimation];
-
-  [_defaults setObject:current forKey:kDefaultsKeyUrl];
-  [_defaults synchronize];
-}
-
-- (void)configurationPanelWasClosed:(WSConfigurationPanel*)panel
-{
-  if (panel.window.sheetParent != nil) {
-    [panel.window.sheetParent endSheet:panel.window];
-  } else {
-    [NSApplication.sharedApplication endSheet:panel.window];
-  }
-
-  _confPanel = nil;
 }
 
 #pragma mark - WSKit implementation

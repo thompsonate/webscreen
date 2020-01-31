@@ -12,9 +12,6 @@
 		69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E0121D23ECB004A37B4 /* MainMenu.xib */; };
 		69837E0621D23ECB004A37B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E0521D23ECB004A37B4 /* main.m */; };
 		69837E0B21D23ED4004A37B4 /* WebscreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699E909221D2354000693908 /* WebscreenView.m */; };
-		69837E2121D25D1F004A37B4 /* WSConfigurationPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 69837E1E21D25D1F004A37B4 /* WSConfigurationPanel.h */; };
-		69837E2221D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */; };
-		69837E2321D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */; };
 		69837E2421D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */; };
 		69837E2521D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */; };
 		699E909121D2354000693908 /* WebscreenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 699E909021D2354000693908 /* WebscreenView.h */; };
@@ -33,8 +30,6 @@
 		69837E0421D23ECB004A37B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69837E0521D23ECB004A37B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69837E0721D23ECB004A37B4 /* WebscreenAppWrapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebscreenAppWrapper.entitlements; sourceTree = "<group>"; };
-		69837E1E21D25D1F004A37B4 /* WSConfigurationPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSConfigurationPanel.h; sourceTree = "<group>"; };
-		69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSConfigurationPanel.m; sourceTree = "<group>"; };
 		69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSConfigurationPanel.xib; sourceTree = "<group>"; };
 		699E908D21D2354000693908 /* Webscreen.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Webscreen.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		699E909021D2354000693908 /* WebscreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebscreenView.h; sourceTree = "<group>"; };
@@ -110,8 +105,6 @@
 				69B0E70721DF616B001D1D0F /* Webscreen.h */,
 				699E909221D2354000693908 /* WebscreenView.m */,
 				699E909421D2354000693908 /* Info.plist */,
-				69837E1E21D25D1F004A37B4 /* WSConfigurationPanel.h */,
-				69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */,
 				69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */,
 			);
 			path = Webscreen;
@@ -124,7 +117,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69837E2121D25D1F004A37B4 /* WSConfigurationPanel.h in Headers */,
 				699E909121D2354000693908 /* WebscreenView.h in Headers */,
 				69B0E70821DF616B001D1D0F /* Webscreen.h in Headers */,
 			);
@@ -249,7 +241,6 @@
 				69837DFE21D23ECB004A37B4 /* AppDelegate.m in Sources */,
 				69837E0B21D23ED4004A37B4 /* WebscreenView.m in Sources */,
 				69837E0621D23ECB004A37B4 /* main.m in Sources */,
-				69837E2321D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				699E909321D2354000693908 /* WebscreenView.m in Sources */,
-				69837E2221D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +273,7 @@
 				CODE_SIGN_ENTITLEMENTS = WebscreenAppWrapper/WebscreenAppWrapper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G7526DGQ9J;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					WEBSCREEN_DEBUG,
@@ -306,7 +296,7 @@
 				CODE_SIGN_ENTITLEMENTS = WebscreenAppWrapper/WebscreenAppWrapper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G7526DGQ9J;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				GCC_PREPROCESSOR_DEFINITIONS = WEBSCREEN_DEBUG;
 				INFOPLIST_FILE = WebscreenAppWrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -434,7 +424,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G7526DGQ9J;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					WEBSCREEN_DEBUG,
 					"DEBUG=1",
@@ -453,7 +443,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G7526DGQ9J;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.Webscreen;
