@@ -66,6 +66,7 @@ static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
 
   _webView = [[WKWebView alloc] initWithFrame:frame configuration:conf];
   _webView.navigationDelegate = self;
+  _webView.alphaValue = 0.0;
 
   if (isPreview) {
     _intermediateView = [[NSView alloc] initWithFrame:NSZeroRect];
@@ -90,9 +91,6 @@ static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
   }
   _animationStarted = YES;
 
-  self.layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
-  _webView.alphaValue = 0.0;
-  
   NSBundle* bundle = [NSBundle bundleForClass:[WebscreenView class]];
   NSString* htmlPath = [bundle pathForResource:@"screensaver" ofType:@"html"];
   NSURL* fileURL = [NSURL fileURLWithPath:htmlPath];
@@ -195,7 +193,10 @@ static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
 {
   if (_webView.alphaValue < 1.0) {
     WKWebView* animator = [_webView animator];
-    animator.alphaValue = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+      animator.alphaValue = 1.0;
+    });
   }
 }
 
